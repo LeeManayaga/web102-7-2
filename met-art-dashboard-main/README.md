@@ -1,6 +1,6 @@
 # Web Development Project 6 - The Met Art Dashboard
 
-Submitted by: **Carmen Wu Feng**
+Submitted by: 
 
 This web app is an interactive dashboard that displays artwork from The Metropolitan Museum of Art using their public API. Users can browse artworks, view individual detail pages, and explore visual data representations that show how works vary across medium and historical period. The dashboard includes search, filtering, and a chart toggle feature.
 
