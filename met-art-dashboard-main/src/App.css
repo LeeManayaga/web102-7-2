@@ -1,0 +1,290 @@
+
+/* === Overall Page === */
+body {
+  margin: 0;
+  background-color: #f9fafb;
+}
+
+.App {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background-color: #f9fafb;
+  padding: 40px 20px 60px;
+  max-width: 2500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* === Header === */
+h1 {
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 2.6rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 25px;
+}
+
+/* === Summary Stats === */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+}
+
+.stats p {
+  background: #fff;
+  padding: 14px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* === Search & Filter === */
+input,
+select {
+  padding: 10px;
+  font-size: 1rem;
+  margin-right: 12px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #0077b6;
+  box-shadow: 0px 0px 4px rgba(0, 119, 182, 0.5);
+}
+
+input:hover,
+select:hover {
+  border-color: #0096c7;
+  transition: border-color 0.2s ease;
+}
+
+/* === Loading Text === */
+.loading {
+  font-size: 1.2rem;
+  color: #0077b6;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* === Artwork Grid === */
+.art-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* always 3 per row */
+  gap: 35px;
+  column-gap: 35px;
+  row-gap: 70px;
+  justify-content: center;
+  align-items: start;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 2500px; /* centers grid and limits width */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* === Artwork Card === */
+.art-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  height: 100%;
+}
+
+.art-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* === Artwork Images (fixed height for even cards) === */
+.art-card img {
+  margin-top: 15px;
+  border-radius: 8px;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+}
+
+.art-card h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.art-card p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.art-card strong {
+  color: #333;
+}
+
+
+/* === Artwork Images (fixed height for even cards) === */
+.art-card img {
+  margin-top: 15px;
+  border-radius: 8px;
+  width: 100%;
+  height: 220px; /* ensures consistent card height */
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* === Highlighted Search Result === */
+.art-card.highlight {
+  border: 2px solid #0077b6;
+  box-shadow: 0px 0px 10px rgba(0, 119, 182, 0.3);
+}
+
+/* === Responsive Design === */
+@media (max-width: 1000px) {
+  .stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+html, body {
+  background-color: #f9fafb;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 1500px) {
+  .art-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 artworks per row on tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .art-list {
+    grid-template-columns: repeat(1, 1fr); /* 1 per row on phone */
+  }
+}
+
+
+.charts {
+  margin-top: 40px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.chart-container {
+  margin-top: 40px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.chart-container h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.toggle-btn {
+  background: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: 0.2s;
+}
+
+.toggle-btn:hover {
+  background: #0096c7;
+}
+
+.App.detail-view {
+  max-width: 900px !important;   /* narrow, centered layout */
+  margin: 0 auto;
+  text-align: left !important;   /* stop centering everything */
+  padding: 40px 20px 80px;
+}
+
+.detail-image {
+  display: block;
+  width: 90%;
+  max-width: 700px;
+  max-height: 600px;
+  margin: 30px auto;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+
+.sidebar {
+  width: 220px;
+  background: #ffffff;
+  padding: 25px;
+  border-right: 1px solid #ddd;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: Georgia, serif;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 1.4rem;
+}
+
+.sidebar a {
+  display: block;
+  margin: 15px 0;
+  color: #0077b6;
+  text-decoration: none;
+  font-weight: 500;
+}
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Page layout to make space for sidebar */
+.with-sidebar {
+  margin-left: 260px;
+}
